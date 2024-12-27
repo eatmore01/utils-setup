@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Script for install docker with last version in Ubuntu distro with apt package manager ( mb his could work on other distro with apt PM )
+
 RM_PKGS=(
     docker.io 
     docker-doc
@@ -69,9 +71,10 @@ sudo systemctl restart docker
 sudo systemctl enable docker
 
 echo "===> add user"
-sudo adduser $USER docker 
-sudo usermod -aG docker $USER
+original_user=$(logname)
 
 
+sudo adduser $original_user docker 
+sudo usermod -aG docker $original_user
 
 bash
