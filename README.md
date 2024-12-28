@@ -10,7 +10,7 @@
 ### Instaling
 
 ```bash
-git clone https://gitlab.com/eatmore01/utils-setup.git
+git clone https://gitlab.com/eatmore01/utils_setup.git
 cd utils_setup
 chmod +x "$(pwd)/install.sh" && "$(pwd)/install.sh"
 ```
