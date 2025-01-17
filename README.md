@@ -26,5 +26,5 @@ kind create cluster --config kind.yml
 #### delete cluster
 
 ```bash
-kind delete cluster --name minimal-cluster
+kind delete cluster --name dev
 ```

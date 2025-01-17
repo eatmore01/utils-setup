@@ -71,10 +71,8 @@ sudo systemctl restart docker
 sudo systemctl enable docker
 
 echo "===> add user"
-original_user=$(logname)
 
+sudo adduser $USER docker 
+sudo usermod -aG docker $USER
 
-sudo adduser $original_user docker 
-sudo usermod -aG docker $original_user
-
-bash
+echo "===> install docker success"
