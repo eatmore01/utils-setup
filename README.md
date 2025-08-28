@@ -18,3 +18,5 @@ talosctl cluster create --workers 2 --name test
 # destroy
 talosctl cluster destroy --name test
 ```
+
+![image](./image.png)
