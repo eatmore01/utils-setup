@@ -1,22 +1,28 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-SCRIPT_PATH="$(pwd)/scripts"
-docker_script_name="01-docker_install.sh"
-kind_script_name="02-kind_install.sh"
-kubectl_scirpt_name="03-kubectl_install.sh"
-helm_script_name="04-helm_install.sh"
+script_directory=scripts
+
+execute_script() {
+    local script="$1"
+    local script_path="$script_directory/$script"
+    if [ -f "$script_path" ]; then
+        chmod +x "$script_path"
+        if [ -x "$script_path" ]; then
+            "$script_path"
+        else
+            echo "Failed to make script '$script' executable."
+        fi
+    else
+        echo "Script '$script' not found in '$script_directory'."
+    fi
+}
 
 
-chmod +x "$SCRIPT_PATH/$docker_script_name"
-"$SCRIPT_PATH/$docker_script_name"
-
-chmod +x "$SCRIPT_PATH/$kind_script_name"
-"$SCRIPT_PATH/$kind_script_name"
-
-chmod +x "$SCRIPT_PATH/$kubectl_scirpt_name"
-"$SCRIPT_PATH/$kubectl_scirpt_name"
-
-chmod +x "$SCRIPT_PATH/$helm_script_name"
-"$SCRIPT_PATH/$helm_script_name"
-
-echo "all utils instaling success"
+execute_script "package.sh"
+execute_script "docker.sh"
+execute_script "helm.sh"
+execute_script "kubectl.sh"
+execute_script "talosctl.sh"
+execute_script "zsh.sh"
+execute_script "go.sh"
+execute_script "yazi.sh"

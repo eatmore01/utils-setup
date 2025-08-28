@@ -1,30 +1,20 @@
-# utils_setup
+# Utils setup
 
-## content
-
-- script for instaling docker, kind, kubectl, helm
-- minimal cluster config for up kube cluster with kind 
-
-## Usage
+`Debian based`
 
 ### Instaling
 
 ```bash
-git clone https://gitlab.com/eatmore01/utils_setup.git
+git clone https://github.com/eatmore01/utils-setup.git
 cd utils_setup
 chmod +x "$(pwd)/install.sh" && "$(pwd)/install.sh"
 ```
 
-### itteraction with cluster with help kind cli
-
-#### deploy cluster
+#### Local cluster
 
 ```bash
-kind create cluster --config kind.yml
-```
-
-#### delete cluster
-
-```bash
-kind delete cluster --name dev
+# create
+talosctl cluster create --workers 2 --name test
+# destroy
+talosctl cluster destroy --name test
 ```

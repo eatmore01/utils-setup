@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Script for install docker with last version in Ubuntu distro with apt package manager ( mb his could work on other distro with apt PM )
 

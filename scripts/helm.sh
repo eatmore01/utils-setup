@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 
 # Script for instaling a helm cli utils version 3 with official script provided helm
 
